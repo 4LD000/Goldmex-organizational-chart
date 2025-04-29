@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Organizational Chart - GoldMex International</title>
+  <link rel="icon" href="images/xcon.ico" type="image/xcon">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div id="mainView" class="view active org-main">
+    <h1>GoldMex International Organizational Chart</h1>
+  
+    <div class="ceo-row">
+      <div class="node ceo" onclick="showView('ceoView')">
+        👨‍💼 CEO - Tavish Garcia
+      </div>
+    </div>
+  
+    <div class="departments-row">
+      <div class="node" onclick="showView('depWarehouse')">
+        📈 Warehouse Department<br><small>David Garcia</small>
+      </div>
+      <div class="node" onclick="showView('depIT')">
+        💻 IT Department<br><small>Javier Calixto</small>
+      </div>
+      <div class="node" onclick="showView('depAccounting')">
+        👥 Accounting Department<br><small>Alejandro Andrade</small>
+      </div>
+      <div class="node" onclick="showView('depBrokerage')">
+        🛠 Brokerage Department<br><small>Karina Martinez</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- CEO View -->
+  <div id="ceoView" class="view">
+    <div class="back-btn" onclick="showView('mainView')">⬅ Back</div>
+    <div class="profile">
+      <h2>Tavish Garcia</h2>
+      <p><strong>Position:</strong> Chief Executive Officer</p>
+      <p><strong>📧 Email:</strong> tgarcia@goldmexintl.com</p>
+      <p><strong>📞 Phone:</strong> +1 619 678 3748</p>
+      <p><strong>📝 Bio:</strong> Visionary leader with years of experience in business leadership. Founder and top-level strategist of GoldMex International.</p>
+    </div>
+  </div>
+
+<!-- Warehouse Department -->
+<div id="depWarehouse" class="view">
+    <div class="back-btn" onclick="showView('mainView')">⬅ Back</div>
+    
+    <div class="dept-container">
+      <div class="manager-card">
+        <div class="manager-header">
+          <h2>David Garcia</h2>
+          <span class="manager-title">🏭 Warehouse Manager</span>
+        </div>
+        <div class="manager-info">
+          <p><strong>📧 Email:</strong> davidgarcia@gmxecommerce.com</p>
+          <p><strong>📞 Phone:</strong> +1 858 315 8274</p>
+          <p><strong>📝 Bio:</strong> Logistics expert with years of warehouse management experience.</p>
+        </div>
+      </div>
+      
+      <div class="warehouse-options">
+        <h3>Select a warehouse location:</h3>
+        <div class="warehouses-row">
+          <div class="warehouse-option" onclick="showView('depWarehouseTijuana')">
+            <span class="warehouse-icon">MX</span>
+            Tijuana Warehouse
+          </div>
+          <div class="warehouse-option" onclick="showView('depWarehouseSanDiego')">
+            <span class="warehouse-icon">US</span>
+            San Diego Warehouse
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="depWarehouseTijuana" class="view">
+    <div class="back-btn" onclick="showView('depWarehouse')">⬅ Back</div>
+    <h2>🏭 Warehouse Department - Tijuana</h2>
+    
+    <div class="dept-container">
+      <!-- 3PL TIJ Department -->
+      <div class="dept-option" onclick="showView('depWarehouseTijuana3PL')">
+        <div class="dept-icon">📦✈️</div>
+        <h3>3PL Tijuana</h3>
+        <p>Third-party logistics and freight management</p>
+      </div>
+       <!-- PRODUCTION Department -->
+       <div class="dept-option" onclick="showView('depWarehouseTijuanaPROD')">
+        <div class="dept-icon">🏗️⚙️</div>
+        <h3>Production</h3>
+        <p>Manufacturing and assembly operations</p>
+      </div>
+    </div>
+  </div>
+  <!-- Warehouse Tijuana 3PL Department View -->
+  <div id="depWarehouseTijuana3PL" class="view">
+    <div class="back-btn" onclick="showView('depWarehouseTijuana')">⬅ Back</div>
+    <h2>🏭 Warehouse - Tijuana / 3PL 📦</h2>
+    
+    <div class="suborg">
+      <div class="card">
+        <h4>Cristian Rivas</h4>
+        <p>📋 Warehouse Supervisor</p>
+        <p>📧 davidgarcia@gmxecommerce.com</p>
+        <p>📞 +52 664 194 4412</p>
+        <p>Oversees warehouse operations and ensures accurate inventory management.</p>
+      </div>
+      <div class="card">
+        <h4>Raymundo Hernández</h4>
+        <p>👔 Warehouse Assistant</p>
+        <p>📧 </p>
+        <p>📞 </p>
+        <p>Supports daily warehouse tasks and inventory handling.</p>
+      </div>
+      <div class="card">
+        <h4>Roberto S.</h4>
+        <p>👔 Warehouse Assistant</p>
+        <p>📧 </p>
+        <p>📞 </p>
+        <p>Supports daily warehouse tasks and inventory handling.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Warehouse Tijuana Production Department View -->
+  <div id="depWarehouseTijuanaPROD" class="view">
+    <div class="back-btn" onclick="showView('depWarehouseTijuana')">⬅ Back</div>
+    <h2>🏭 Warehouse - Tijuana / Production ⚙️</h2>
+    
+    <div class="suborg">
+      <div class="card">
+        <h4>Lyliana R.</h4>
+        <p>🏭 Production Manager</p>
+        <p>📧 </p>
+        <p>📞 </p>
+        <p>Manages production activities and ensures workflow efficiency.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div id="depWarehouseSanDiego" class="view">
+    <div class="back-btn" onclick="showView('depWarehouse')">⬅ Back</div>
+    <h2>🏭 Warehouse Department - San Diego</h2>
+    
+    <div class="dept-container">
+      <!-- 3PL San Diego Department -->
+      <div class="dept-option" onclick="showView('depWarehouseSanDiego3PL')">
+        <div class="dept-icon">📦✈️</div>
+        <h3>3PL San Diego</h3>
+        <p>Third-party logistics and distribution</p>
+      </div>
+       <!-- Return Logistic Department -->
+       <div class="dept-option" onclick="showView('depWarehouseSanDiegoRT')">
+        <div class="dept-icon">🔄📦</div>
+        <h3>Return Logistics</h3>
+        <p>Processing returns and reverse logistics</p>
+      </div>
+       <!-- Fulfillment Department -->
+       <div class="dept-option" onclick="showView('depWarehouseSanDiegoFull')">
+        <div class="dept-icon">🚚📦</div>
+        <h3>Fulfillment</h3>
+        <p>Order processing and shipping</p>
+      </div>
+      <!-- Packaging Department -->
+      <div class="dept-option" onclick="showView('depWarehouseSanDiegoPack')">
+        <div class="dept-icon">📦✂️</div>
+        <h3>Packaging</h3>
+        <p>Product packaging and preparation</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Warehouse San Diego 3PL Department View -->
+  <div id="depWarehouseSanDiego3PL" class="view">
+    <div class="back-btn" onclick="showView('depWarehouseSanDiego')">⬅ Back</div>
+    <h2>🏭 Warehouse - San Diego / 3PL 📦</h2>
+    
+    <div class="suborg">
+      <div class="card">
+        <h4>Ana Gutiérrez</h4>
+        <p>📋 Warehouse Supervisor</p>
+        <p>📧 hello@gmxecommerce.com</p>
+        <p>📞 +1 858 315 8354</p>
+        <p>Oversees warehouse operations and ensures accurate inventory management.</p>
+      </div>
+      <div class="card">
+        <h4>Martín Baca</h4>
+        <p>👔 Warehouse Assistant</p>
+        <p>📧 </p>
+        <p>📞 </p>
+        <p>Supports daily warehouse tasks and inventory handling.</p>
+      </div>
+      <div class="card">
+        <h4>Roberto Morales</h4>
+        <p>👔 Warehouse Assistant</p>
+        <p>📧 </p>
+        <p>📞 </p>
+        <p>Supports daily warehouse tasks and inventory handling.</p>
+      </div>
+      <div class="card">
+        <h4>Ayleen Garcia</h4>
+        <p>👔 Warehouse Assistant</p>
+        <p>📧 </p>
+        <p>📞 </p>
+        <p>Supports daily warehouse tasks and inventory handling.</p>
+      </div>
+      <div class="card">
+        <h4>Jesús Páez</h4>
+        <p>👔 Warehouse Assistant</p>
+        <p>📧 </p>
+        <p>📞 </p>
+        <p>Supports daily warehouse tasks and inventory handling.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Warehouse Return Logistic San Diego Department View -->
+  <div id="depWarehouseSanDiegoRT" class="view">
+    <div class="back-btn" onclick="showView('depWarehouseSanDiego')">⬅ Back</div>
+    <h2>🏭 Warehouse - San Diego / Return Logistics 🔄</h2>
+    
+    <div class="suborg">
+      <div class="card">
+        <h4>Ana Gutiérrez</h4>
+        <p>📋 Warehouse Supervisor</p>
+        <p>📧 hello@gmxecommerce.com</p>
+        <p>📞 +1 858 315 8354</p>
+        <p>Oversees warehouse operations and ensures accurate inventory management.</p>
+      </div>
+      <div class="card">
+        <h4>Martín Baca</h4>
+        <p>👔 Warehouse Assistant</p>
+        <p>📧 </p>
+        <p>📞 </p>
+        <p>Supports daily warehouse tasks and inventory handling.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Warehouse Fulfillment San Diego Department View -->
+  <div id="depWarehouseSanDiegoFull" class="view">
+    <div class="back-btn" onclick="showView('depWarehouseSanDiego')">⬅ Back</div>
+    <h2>🏭 Warehouse - San Diego / Fulfillment 🚚</h2>
+    
+    <div class="suborg">
+      <div class="card">
+        <h4>Ana Gutiérrez</h4>
+        <p>📋 Warehouse Supervisor</p>
+        <p>📧 hello@gmxecommerce.com</p>
+        <p>📞 +1 858 315 8354</p>
+        <p>Oversees warehouse operations and ensures accurate inventory management.</p>
+      </div>
+      <div class="card">
+        <h4>Roberto Morales</h4>
+        <p>👔 Warehouse Assistant</p>
+        <p>📧 </p>
+        <p>📞 </p>
+        <p>Supports daily warehouse tasks and inventory handling.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Warehouse Packaging San Diego Department View -->
+  <div id="depWarehouseSanDiegoPack" class="view">
+    <div class="back-btn" onclick="showView('depWarehouseSanDiego')">⬅ Back</div>
+    <h2>🏭 Warehouse - San Diego / Packaging 📦✂️</h2>
+    
+    <div class="suborg">
+      <div class="card">
+        <h4>Ana Gutiérrez</h4>
+        <p>📋 Warehouse Supervisor</p>
+        <p>📧 hello@gmxecommerce.com</p>
+        <p>📞 +1 858 315 8354</p>
+        <p>Oversees warehouse operations and ensures accurate inventory management.</p>
+      </div>
+      <div class="card">
+        <h4>Ayleen Garcia</h4>
+        <p>👔 Warehouse Assistant</p>
+        <p>📧 </p>
+        <p>📞 </p>
+        <p>Supports daily warehouse tasks and inventory handling.</p>
+      </div>
+    </div>
+  </div>
+      
+  <!-- IT Department -->
+  <div id="depIT" class="view">
+    <div class="back-btn" onclick="showView('mainView')">⬅ Back</div>
+    
+    <div class="dept-container">
+      <div class="manager-card">
+        <div class="manager-header">
+          <h2>Javier Calixto</h2>
+          <span class="manager-title">IT Manager</span>
+        </div>
+        <div class="manager-info">
+          <p><strong>📧 Email:</strong> fulfillment@gmxecommerce.com</p>
+          <p><strong>📞 Phone:</strong> +52 664 132 3728</p>
+          <p><strong>📝 Bio:</strong> Systems specialist.</p>
+        </div>
+      </div>
+      
+      <div class="warehouse-options">
+        <h3>Select a location:</h3>
+        <div class="warehouses-row">
+          <div class="warehouse-option" onclick="showView('depITTijuana')">
+            <span class="warehouse-icon">MX</span>
+            Tijuana Office
+          </div>
+          <div class="warehouse-option" onclick="showView('depITSanDiego')">
+            <span class="warehouse-icon">US</span>
+            San Diego Office
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="depITTijuana" class="view">
+    <div class="back-btn" onclick="showView('depIT')">⬅ Back</div>
+    <h2>IT Department - Tijuana</h2>
+    <div class="suborg">
+      <div class="card">
+        <h4>Javier Calixto</h4>
+        <p>📋IT Assistant</p>
+        <p>📧fulfillment@gmxecommerce.com</p>
+        <p>📞+52 664 132 3728</p>
+        <p>Maintains technology systems and supports operational efficiency</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="depITSanDiego" class="view">
+    <div class="back-btn" onclick="showView('depIT')">⬅ Back</div>
+    <h2>IT Department - San Diego</h2>
+    <div class="suborg">
+      <div class="card">
+        <h4>Javier Calixto</h4>
+        <p>📋IT Assistant</p>
+        <p>📧fulfillment@gmxecommerce.com</p>
+        <p>📞+52 664 132 3728</p>
+        <p>Maintains technology systems and supports operational efficiency</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accounting Department -->
+  <div id="depAccounting" class="view">
+    <div class="back-btn" onclick="showView('mainView')">⬅ Back</div>
+    
+    <div class="dept-container">
+      <div class="manager-card">
+        <div class="manager-header">
+          <h2>Alejandro Andrade</h2>
+          <span class="manager-title">Accounting Manager</span>
+        </div>
+        <div class="manager-info">
+          <p><strong>📧 Email:</strong> aandrade@goldmexintl.com</p>
+          <p><strong>📞 Phone:</strong> +1 619 897 4270</p>
+          <p><strong>📝 Bio:</strong> Certified Public Accountant with specialization in corporate finance.</p>
+        </div>
+      </div>
+      
+      <div class="warehouse-options">
+        <h3>Select a location:</h3>
+        <div class="warehouses-row">
+          <div class="warehouse-option" onclick="showView('depAccountingTijuana')">
+            <span class="warehouse-icon">MX</span>
+            Tijuana Office
+          </div>
+          <div class="warehouse-option" onclick="showView('depAccountingSanDiego')">
+            <span class="warehouse-icon">US</span>
+            San Diego Office
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="depAccountingTijuana" class="view">
+    <div class="back-btn" onclick="showView('depAccounting')">⬅ Back</div>
+    <h2>Accounting Department - Tijuana</h2>
+    <div class="suborg">
+      <div class="card">
+        <h4>Sandy Jhoseline</h4>
+        <p>📋Human Resources Manager and Accounting Assistant</p>
+        <p>📧aandrade@goldmexintl.com</p>
+        <p>📞+1 619 897 4270</p>
+        <p>Supports HR operations and assists with accounting tasks.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="depAccountingSanDiego" class="view">
+    <div class="back-btn" onclick="showView('depAccounting')">⬅ Back</div>
+    <h2>Accounting Department - San Diego</h2>
+    <div class="suborg">
+      <div class="card">
+        <h4>Sandy Jhoseline</h4>
+        <p>📋Human Resources Manager and Accounting Assistant</p>
+        <p>📧aandrade@goldmexintl.com</p>
+        <p>📞+1 619 897 4270</p>
+        <p>Supports HR operations and assists with accounting tasks.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Brokerage Department -->
+<div id="depBrokerage" class="view">
+  <div class="back-btn" onclick="showView('mainView')">⬅ Back</div>
+  
+  <div class="dept-container">
+    <div class="manager-card">
+      <div class="manager-header">
+        <h2>Karina Martinez</h2>
+        <span class="manager-title">Brokerage Manager</span>
+      </div>
+      <div class="manager-info">
+        <p><strong>📧 Email:</strong> kmartinez@goldmexintl.comm</p>
+        <p><strong>📞 Phone:</strong> +52 664 204 3277</p>
+        <p><strong>📝 Bio:</strong> International trade expert.</p>
+      </div>
+    </div>
+    
+    <div class="warehouse-options">
+      <h3>Select a location:</h3>
+      <div class="warehouses-row">
+        <div class="warehouse-option" onclick="showView('depBrokerageTijuana')">
+          <span class="warehouse-icon">MX</span>
+          Tijuana Office
+        </div>
+        <div class="warehouse-option" onclick="showView('depBrokerageSanDiego')">
+          <span class="warehouse-icon">US</span>
+          San Diego Office
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Brokerage - Tijuana View -->
+<div id="depBrokerageTijuana" class="view">
+  <div class="back-btn" onclick="showView('depBrokerage')">⬅ Back</div>
+  <h2>Brokerage Department - Tijuana</h2>
+  <div class="suborg">
+    <div class="card">
+      <h4>Karina Martinez</h4>
+      <p>📋Brokerage Manager</p>
+      <p>📧kmartinez@goldmexintl.comm</p>
+      <p>📞+52 664 204 3277</p>
+      <p>Manages customs clearance for international shipments</p>
+    </div>
+  </div>
+</div>
+
+<!-- Brokerage - San Diego View -->
+<div id="depBrokerageSanDiego" class="view">
+  <div class="back-btn" onclick="showView('depBrokerage')">⬅ Back</div>
+  <h2>Brokerage Department - San Diego</h2>
+  
+  <div class="dept-container">
+    <!-- Cross Border Department (now with subdepartments) -->
+    <div class="dept-option with-subdepts"onclick="showView('depBrokerageSDCrossBorder')">
+      <div class="dept-icon">🌉</div>
+      <h3>Cross Border</h3>
+      <p>Cross-border operations management</p>
+      
+      <!-- Subdepartments -->
+      <div class="subdepts-container" onclick="event.stopPropagation()">
+        <div class="subdept-option" onclick="showView('depBrokerageSDCrossBorderEcommerce')">
+          <span class="subdept-icon">🛒</span> E-commerce
+        </div>
+      </div>
+    </div>
+    
+    <!-- Inbonds Air/Ocean Department -->
+    <div class="dept-option" onclick="showView('depBrokerageSDInbonds')">
+      <div class="dept-icon">✈️🛳️</div>
+      <h3>Inbonds Air/Ocean</h3>
+      <p>Management of air and sea imports</p>
+    </div>
+    
+    <!-- Compliance Department (with subdepartments) -->
+    <div class="dept-option with-subdepts" onclick="showView('depBrokerageSDCompliance')">
+      <div class="dept-icon">📋</div>
+      <h3>Compliance</h3>
+      <p>Regulatory and normative compliance</p>
+      
+      <!-- Subdepartments -->
+      <div class="subdepts-container" onclick="event.stopPropagation()">
+        <div class="subdept-option" onclick="showView('depBrokerageSDCompliancePGA')">
+          <span class="subdept-icon">🔍</span> PGA
+        </div>
+        <div class="subdept-option" onclick="showView('depBrokerageSDComplianceHTS')">
+          <span class="subdept-icon">📊</span> HTS Classification
+        </div>
+        <div class="subdept-option" onclick="showView('depBrokerageSDComplianceFines')">
+          <span class="subdept-icon">⚖️</span> Fines/Penalties
+        </div>
+        <div class="subdept-option" onclick="showView('depBrokerageSDCompliancePlanning')">
+          <span class="subdept-icon">🧭</span> Planning and Strategy
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ NEW E-COMMERCE SUBDEPARTMENT VIEWS ============ -->
+
+<!-- E-commerce Cross Border View -->
+<div id="depBrokerageSDCrossBorderEcommerce" class="view">
+  <div class="back-btn" onclick="showView('depBrokerageSanDiego')">⬅ Back</div>
+  <h2>Brokerage - San Diego / Cross Border / E-commerce</h2>
+  
+  <div class="suborg">
+    <div class="card">
+      <h4>Karina Martinez</h4>
+      <p>📋E-commerce Coordinator</p>
+      <p>📧kmartinez@goldmexintl.comm</p>
+      <p>📞+52 664 204 3277</p>
+      <p>Manages all e-commerce cross-border operations between Mexico-US.</p>
+    </div>
+    <div class="card">
+      <h4>Roberto Lara</h4>
+      <p>📋E-commerce Assistant</p>
+      <p>📧Rlara@goldmexintl.com</p>
+      <p>📞+1 619 882 8971</p>
+      <p>Manages all e-commerce cross-border operations between Mexico-US.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ EXISTING BROKERAGE VIEWS (remain unchanged) ============ -->
+
+<!-- Compliance Department View -->
+<div id="depBrokerageSDCompliance" class="view">
+  <div class="back-btn" onclick="showView('depBrokerageSanDiego')">⬅ Back</div>
+  <h2>Brokerage - San Diego / Compliance</h2>
+  
+  <div class="suborg">
+    <div class="card">
+      <h4>Antonio Nogales</h4>
+      <p>📋Compliance Assistant</p>
+      <p>📧Anogales@goldmexintl.com</p>
+      <p>📞+1 619 734 5897</p>
+      <p>Ensures adherence to trade laws, regulations, and internal procedures.</p>
+    </div>
+    <div class="card">
+      <h4>Karina Martinez</h4>
+      <p>📋Compliance Assistant</p>
+      <p>📧kmartinez@goldmexintl.comm</p>
+      <p>📞+52 664 204 3277</p>
+      <p>Ensures adherence to trade laws, regulations, and internal procedures.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Crossborder Department View -->
+<div id="depBrokerageSDCrossBorder" class="view">
+  <div class="back-btn" onclick="showView('depBrokerageSanDiego')">⬅ Back</div>
+  <h2>Brokerage - San Diego / CrossBorder</h2>
+  
+  <div class="suborg">
+    <div class="card">
+      <h4>Mario Medina</h4>
+      <p>📋E-commerce Assistant</p>
+      <p>📧amedina@goldmexintl.com</p>
+      <p>📞+1 619 748 7301</p>
+      <p>Coordinates international shipments and ensures customs compliance.</p>
+    </div>
+    <div class="card">
+      <h4>Roberto Lara</h4>
+      <p>📋E-commerce Assistant</p>
+      <p>📧Rlara@goldmexintl.com</p>
+      <p>📞+1 619 882 8971</p>
+      <p>Coordinates international shipments and ensures customs compliance.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Inbonds Air/Ocean View -->
+<div id="depBrokerageSDInbonds" class="view">
+  <div class="back-btn" onclick="showView('depBrokerageSanDiego')">⬅ Back</div>
+  <h2>Brokerage - San Diego / Inbonds Air/Ocean</h2>
+  
+  <div class="suborg">
+    <div class="card">
+      <h4>Antonio Nogales</h4>
+      <p>📋Inbonds Air/Ocean Assistant</p>
+      <p>📧Anogales@goldmexintl.com</p>
+      <p>📞+1 619 734 5897</p>
+      <p>Oversees bonded air and ocean shipments before customs clearance.</p>
+    </div>
+    <div class="card">
+      <h4>Roberto Lara</h4>
+      <p>📋Inbonds Air/Ocean Assistant</p>
+      <p>📧Rlara@goldmexintl.com</p>
+      <p>📞+1 619 882 8971</p>
+      <p>Oversees bonded air and ocean shipments before customs clearance.</p>
+    </div>
+    <div class="card">
+      <h4>Karina Martinez</h4>
+      <p>📋Inbonds Air/Ocean Assistant</p>
+      <p>📧kmartinez@goldmexintl.comm</p>
+      <p>📞+52 664 204 3277</p>
+      <p>Oversees bonded air and ocean shipments before customs clearance.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PGA Compliance View -->
+<div id="depBrokerageSDCompliancePGA" class="view">
+  <div class="back-btn" onclick="showView('depBrokerageSanDiego')">⬅ Back</div>
+  <h2>Brokerage - San Diego / Compliance / PGA</h2>
+  
+  <div class="suborg">
+    <div class="card">
+      <h4>Antonio Nogales</h4>
+      <p>📋PGA Assistant</p>
+      <p>📧Anogales@goldmexintl.com</p>
+      <p>📞+1 619 734 5897</p>
+      <p>Manages compliance with customs and partner government agency regulations.</p>
+    </div>
+    <div class="card">
+      <h4>Karina Martinez</h4>
+      <p>📋PGA Assistant</p>
+      <p>📧kmartinez@goldmexintl.comm</p>
+      <p>📞+52 664 204 3277</p>
+      <p>Manages compliance with customs and partner government agency regulations.</p>
+    </div>
+  </div>
+</div>
+
+<!-- HTS Classification View -->
+<div id="depBrokerageSDComplianceHTS" class="view">
+  <div class="back-btn" onclick="showView('depBrokerageSanDiego')">⬅ Back</div>
+  <h2>Brokerage - San Diego / Compliance / HTS Classification</h2>
+  
+  <div class="suborg">
+    <div class="card">
+      <h4>Antonio Nogales</h4>
+      <p>📋HTS Classification Assistant</p>
+      <p>📧Anogales@goldmexintl.com</p>
+      <p>📞+1 619 734 5897</p>
+      <p>Determines correct tariff codes for imported goods.</p>
+    </div>
+    <div class="card">
+      <h4>Karina Martinez</h4>
+      <p>📋HTS Classification Assistant</p>
+      <p>📧kmartinez@goldmexintl.comm</p>
+      <p>📞+52 664 204 3277</p>
+      <p>Determines correct tariff codes for imported goods.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Fines/Penalties View -->
+<div id="depBrokerageSDComplianceFines" class="view">
+  <div class="back-btn" onclick="showView('depBrokerageSanDiego')">⬅ Back</div>
+  <h2>Brokerage - San Diego / Compliance / Fines/Penalties</h2>
+  
+  <div class="suborg">
+    <div class="card">
+      <h4>Antonio Nogales</h4>
+      <p>📋Fines/Penalties Assistant</p>
+      <p>📧Anogales@goldmexintl.com</p>
+      <p>📞+1 619 734 5897</p>
+      <p>Handles customs fines, penalties, and mitigation processes.</p>
+    </div>
+    <div class="card">
+      <h4>Karina Martinez</h4>
+      <p>📋Fines/Penalties Assistant</p>
+      <p>📧kmartinez@goldmexintl.comm</p>
+      <p>📞+52 664 204 3277</p>
+      <p>Handles customs fines, penalties, and mitigation processes.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Planning and Strategy View -->
+<div id="depBrokerageSDCompliancePlanning" class="view">
+  <div class="back-btn" onclick="showView('depBrokerageSanDiego')">⬅ Back</div>
+  <h2>Brokerage - San Diego / Compliance / Planning and Strategy</h2>
+  
+  <div class="suborg">
+    <div class="card">
+      <h4>Antonio Nogales</h4>
+      <p>📋Planning and Strategy Assistant</p>
+      <p>📧Anogales@goldmexintl.com</p>
+      <p>📞+1 619 734 5897</p>
+      <p>Develops compliance strategies and process improvements.</p>
+    </div>
+    <div class="card">
+      <h4>Karina Martinez</h4>
+      <p>📋Planning and Strategy Assistant</p>
+      <p>📧kmartinez@goldmexintl.comm</p>
+      <p>📞+52 664 204 3277</p>
+      <p>Develops compliance strategies and process improvements.</p>
+    </div>
+  </div>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
