@@ -667,7 +667,7 @@
   background: 
     linear-gradient(rgba(248, 249, 250, 0.85), 
     rgba(248, 249, 250, 0.116)),
-    url('images/main-bg.png') center/cover no-repeat fixed;
+    url('main-bg.png') center/cover no-repeat fixed;
   min-height: 100vh;
   /* No uses width, overflow ni position:relative aquí */
 }
@@ -689,7 +689,7 @@
 #depWarehouseTijuana3PL, #depWarehouseTijuanaPROD,
 #depWarehouseSanDiego3PL, #depWarehouseSanDiegoRT,
 #depWarehouseSanDiegoFull, #depWarehouseSanDiegoPack {
-  background: url('images/warehouse-bg.png') center/cover no-repeat fixed;
+  background: url('warehouse-bg.png') center/cover no-repeat fixed;
   position: relative;
   min-height: 100vh;
 }
@@ -703,7 +703,7 @@
 
 #depAccounting,
 #depAccountingTijuana, #depAccountingSanDiego {
-  background: url('images/accounting-bg.png') center/cover no-repeat fixed;
+  background: url('accounting-bg.png') center/cover no-repeat fixed;
   position: relative;
   min-height: 100vh;
 }
@@ -714,7 +714,7 @@
 #depBrokerageSDCompliance, #depBrokerageSDCrossBorderEcommerce,
 #depBrokerageSDCompliancePGA, #depBrokerageSDComplianceHTS,
 #depBrokerageSDComplianceFines, #depBrokerageSDCompliancePlanning {
-  background: url('images/brokerage-bg.png') center/cover no-repeat fixed;
+  background: url('brokerage-bg.png') center/cover no-repeat fixed;
   position: relative;
   min-height: 100vh;
 }
